@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">codeDoctors</string>
+
+    <string-array name="options_schedules" >
+        <item>Em Jejum</item>
+        <item>2 em 2 horas</item>
+        <item>4 em 4 horas</item>
+        <item>6 em 6 horas</item>
+        <item>8 em 8 horas </item>
+        <item>12 em 12 horas</item>
+        <item>Antes das Refeições</item>
+        <item>Após as Refeições</item>
+    </string-array>
+</resources>
