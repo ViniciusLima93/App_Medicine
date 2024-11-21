@@ -1,7 +1,15 @@
 <resources>
     <string name="app_name">codeDoctors</string>
+    <string name="text_header">Registro de Medicamentos</string>
+    <string name="edit_name_medicine">Nome do Medicamento</string>
+    <string name="edit_dose">Dosagem</string>
+    <string name="label_frequency">Frequência de Medicação</string>
+    <string name="spinner_medicine_schedule">Spinner de Frequência</string>
+    <string name="label_comments">Comentários</string>
+    <string name="text_area"></string>
+    <string name="button_send"></string>
 
-    <string-array name="options_schedules" >
+    <string-array name="options_schedules">
         <item>Em Jejum</item>
         <item>2 em 2 horas</item>
         <item>4 em 4 horas</item>
@@ -11,4 +19,6 @@
         <item>Antes das Refeições</item>
         <item>Após as Refeições</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
