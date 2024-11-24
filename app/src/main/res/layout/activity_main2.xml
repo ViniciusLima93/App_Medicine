@@ -52,6 +52,13 @@
         android:text="Leve a moderada.Consigo manter a rotina"
         />
 
+    <Button
+        android:id="@+id/back_To_ListSymptoms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="VOLTAR A LISTA DE SINTOMAS"
+        />
+
 
 
 

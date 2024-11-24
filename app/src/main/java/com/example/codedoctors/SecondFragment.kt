@@ -6,8 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentActivity
-import com.example.codedoctors.databinding.FragmentFirstBinding
+import com.example.codedoctors.databinding.FragmentSecondBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -16,22 +15,20 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [FirstFragment.newInstance] factory method to
+ * Use the [SecondFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class FirstFragment : Fragment(), View.OnClickListener {
+class SecondFragment : Fragment(), View.OnClickListener {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
 
-    private var _binding: FragmentFirstBinding ?  = null
+    private var _binding: FragmentSecondBinding ? = null
 
     private val binding get() = _binding!!
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -42,13 +39,12 @@ class FirstFragment : Fragment(), View.OnClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentFirstBinding.inflate(inflater, container, false)
+        _binding = FragmentSecondBinding.inflate(inflater,container,false)
 
-        binding.buttonRegisterMedicines.setOnClickListener{
-            val intent = Intent(requireContext(),MedicinesRegisterActivity::class.java)
+        binding.buttonRegisterSymptoms.setOnClickListener{
+            val intent = Intent(requireContext(),MainActivity2::class.java)
             startActivity(intent)
         }
-
 
 
         return binding.root
@@ -66,29 +62,26 @@ class FirstFragment : Fragment(), View.OnClickListener {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment FirstFragment.
+         * @return A new instance of fragment SecondFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            FirstFragment().apply {
+            SecondFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
                 }
             }
-
-
     }
 
     override fun onClick(v: View?) {
-        if(v != null ) {
-            if (v.id == R.id.button_register_medicines) {
-                val intent = Intent(requireContext(),MedicinesRegisterActivity::class.java)
+        if(v != null) {
+            if(v.id == R.id.button_register_symptoms) {
+                val intent = Intent(requireContext(),MainActivity2::class.java)
                 startActivity(intent)
             }
         }
     }
-
 
 }
