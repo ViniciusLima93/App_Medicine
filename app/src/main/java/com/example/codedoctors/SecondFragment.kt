@@ -39,6 +39,7 @@ class SecondFragment : Fragment(), View.OnClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         _binding = FragmentSecondBinding.inflate(inflater,container,false)
 
         binding.buttonRegisterSymptoms.setOnClickListener{

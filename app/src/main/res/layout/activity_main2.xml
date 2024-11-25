@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activityMain2"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,7 +11,7 @@
 
     <TextView
         android:id="@+id/text_header_pain"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Registro de Sintomas"
         android:textSize="30sp"
@@ -19,16 +20,26 @@
 
     <TextView
         android:id="@+id/label_feels"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Como você está se sentindo?"
+        android:text="Infome como você está se sentindo"
         android:gravity="center"
         />
+
     <EditText
+        android:id="@+id/edit_feels"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_marginTop="32dp"
+        android:layout_height="202dp"
+        android:layout_marginTop="32dp" />
+
+    <TextView
+        android:id="@+id/label_CheckboxPain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Selecione a intensidade/forma das dores"
+        android:textSize="20sp"
         />
 
     <CheckBox
@@ -52,13 +63,44 @@
         android:text="Leve a moderada.Consigo manter a rotina"
         />
 
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        >
+
     <Button
         android:id="@+id/back_To_ListSymptoms"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="0.9"
         android:layout_height="wrap_content"
-        android:text="VOLTAR A LISTA DE SINTOMAS"
-        />
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="5sp"
+        android:backgroundTint="@color/blue"
+        android:text="Voltar" />
 
+        <Button
+            android:id="@+id/button_SaveSymptoms"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginRight="5sp"
+            android:layout_weight="0.9"
+            android:backgroundTint="@color/blue"
+            android:text="Registrar Sintomas"
+
+            />
+
+    </TableRow>
+
+
+
+    <FrameLayout
+        android:id="@+id/AcitivityMains2_FramLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 
 

@@ -10,6 +10,7 @@ import android.widget.Spinner
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.navigation.findNavController
 import com.example.codedoctors.databinding.ActivityMedicinesRegisterBinding
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.firestore
@@ -67,9 +68,9 @@ class MedicinesRegisterActivity : AppCompatActivity(), View.OnClickListener {
                 Log.d(TAG,"DocumentSnapshot added with ID: ${documentReference.id}")
                 Toast.makeText(this,"Dados Salvos com Sucesso", Toast.LENGTH_SHORT).show()
 
-//                val intent = Intent(this,MainActivity2::class.java)
-//                startActivity(intent)
 
+                 val navController = findNavController(R.id.medicinesRegister_FrameLayout)
+                navController.navigate(R.id.first_fragment)
 
             }
                 .addOnFailureListener { e:Throwable? ->
@@ -99,8 +100,8 @@ class MedicinesRegisterActivity : AppCompatActivity(), View.OnClickListener {
             }
 
             if(view.id == R.id.button_back_To_ListMedicines) {
-                val intent = Intent(this,FirstFragment::class.java)
-                startActivity(intent)
+                val navController = findNavController(R.id.medicinesRegister_FrameLayout)
+                navController.navigate(R.id.first_fragment)
             }
 
         }

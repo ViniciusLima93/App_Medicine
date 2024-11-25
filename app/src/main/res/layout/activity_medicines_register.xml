@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/register_medicines_Layout"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MedicinesRegisterActivity"
     android:orientation="vertical">
+
 
     <TextView
         android:id="@+id/text_header"
@@ -54,24 +56,48 @@
     <EditText
         android:id="@+id/text_area"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="200dp"
         android:layout_marginTop="3dp" />
 
-    <Button
-        android:id="@+id/button_send"
-        android:layout_width="wrap_content"
+
+    <TableRow
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:padding="8sp"
-        android:text="ENVIAR"
+        android:weightSum="2"
+        >
+
+        <Button
+            android:id="@+id/button_back_To_ListMedicines"
+            android:layout_width="0dp"
+            android:layout_weight="0.9"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="5sp"
+            android:backgroundTint="@color/blue"
+            android:text="Voltar"
+            />
+
+
+
+        <Button
+        android:id="@+id/button_send"
+        android:layout_width="1dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="5sp"
+        android:layout_weight="0.9"
+        android:backgroundTint="@color/blue"
+        android:text="Registrar"
         />
 
-    <Button
-        android:id="@+id/button_back_To_ListMedicines"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="VOLTAR"
-        />
+
+    </TableRow>
+
+    <FrameLayout
+        android:id="@+id/medicinesRegister_FrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 
 </LinearLayout>

@@ -7,6 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.FragmentManager
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import com.example.codedoctors.databinding.FragmentFirstBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -47,8 +51,8 @@ class FirstFragment : Fragment(), View.OnClickListener {
         binding.buttonRegisterMedicines.setOnClickListener{
             val intent = Intent(requireContext(),MedicinesRegisterActivity::class.java)
             startActivity(intent)
-        }
 
+        }
 
 
         return binding.root
