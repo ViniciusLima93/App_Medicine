@@ -11,6 +11,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.codedoctors.databinding.ActivityMain2Binding
+import com.example.codedoctors.databinding.FragmentThirdBinding
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.firestore
 import com.google.firebase.firestore.toObjects
@@ -31,6 +33,11 @@ data class MedicineClass (
     val frequencia: String? = null,
     val dosagem:String? = null,
     val comentarios: String? = null
+)
+
+data class  PainClass (
+    val name_symptoms:String? = null,
+    val pain_fell:List<String>? = null
 )
 
 class MedicineViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -63,16 +70,22 @@ class MedicineAdapter (private val medicines: List<MedicineClass>) :
 
 
 class ThirdFragment : Fragment() {
+
+    private lateinit var binding: FragmentThirdBinding
+
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = FragmentThirdBinding.inflate(layoutInflater)
+
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
     }
 
     @SuppressLint("SuspiciousIndentation")
@@ -83,33 +96,52 @@ class ThirdFragment : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_third, container, false)
 
-        val recyclerView: RecyclerView = view.findViewById(R.id.recycler_medicines)
+//        val recyclerView: RecyclerView = view.findViewById(R.id.recycler_medicines)
 
         val db = Firebase.firestore
 
         val docRef = db.collection("medicines")
+        val docRefSymptons = db.collection("symptoms")
 
         val medicines = mutableListOf<MedicineClass>()
+
+        val syntoms = mutableListOf<PainClass>()
+
+            docRefSymptons.get().addOnSuccessListener { documentSnapshot ->
+                val symptons = documentSnapshot.toObjects(PainClass::class.java)
+
+                val nameSymptons = symptons.map { v -> v.name_symptoms}
+                binding.painViewFromFirebase.text = nameSymptons.joinToString ("\n")
+
+                Log.d(TAG, "THIS IS symptoms REGISTER => $symptons")
+            }
 
             docRef.get().addOnSuccessListener{documentSnapshot ->
             val medicine = documentSnapshot.toObjects(MedicineClass::class.java)
 
-            Log.d(TAG, "THIS IS MEDICINES REGISTER => $medicine")
-                if (medicine.isNotEmpty()) {
-                    recyclerView.adapter = MedicineAdapter(medicine)
-                }
+                val coments = medicine.map { v -> v.comentarios }
+                binding.commentsViewFromFirebase.text = coments.joinToString("\n")
 
-                //recyclerView.adapter = MedicineAdapter(medicines)
-                recyclerView.layoutManager = LinearLayoutManager(context)
-        }
+                val name_medicine = medicine.map {v -> v.nome}
+                binding.medicineViewFromFirebase.text = name_medicine.joinToString("\n")
+
+                Log.d(TAG, "THIS IS MEDICINES REGISTER => $medicine")
+
+
+
+            }
 
 
 
         // Inflate the layout for this fragment
-        return view
+        return binding.root
 
 
-    }
+        }
+
+
+
+
 
     companion object {
         /**

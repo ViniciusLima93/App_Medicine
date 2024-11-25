@@ -48,10 +48,10 @@ class FirstFragment : Fragment(), View.OnClickListener {
     ): View? {
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
 
-        binding.buttonRegisterMedicines.setOnClickListener{
-            val intent = Intent(requireContext(),MedicinesRegisterActivity::class.java)
-            startActivity(intent)
+        val navController = findNavController()
 
+        binding.buttonRegisterMedicines.setOnClickListener {
+            navController.navigate(R.id.action_firstFragment_to_medicinesRegisterActivity)
         }
 
 

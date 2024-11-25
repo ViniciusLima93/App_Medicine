@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/firstFragment">
+
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.example.codedoctors.FirstFragment"
+        android:label="fragment_first"
+        tools:layout="@layout/fragment_first" >
+        <action
+            android:id="@+id/action_firstFragment_to_medicinesRegisterActivity"
+            app:destination="@id/medicinesRegisterActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/medicinesRegisterActivity"
+        android:name="com.example.codedoctors.MedicinesRegisterActivity"
+        android:label="activity_medicines_register"
+        tools:layout="@layout/activity_medicines_register" />
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.example.codedoctors.SecondFragment"
+        android:label="fragment_second"
+        tools:layout="@layout/fragment_second" >
+        <action
+            android:id="@+id/action_secondFragment_to_mainActivity2"
+            app:destination="@id/mainActivity2" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity2"
+        android:name="com.example.codedoctors.MainActivity2"
+        android:label="activity_main2"
+        tools:layout="@layout/activity_main2" />
+    <action
+        android:id="@+id/medinesRegister_To_FirstFragment"
+        app:destination="@id/firstFragment" />
+</navigation>

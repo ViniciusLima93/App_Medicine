@@ -1,5 +1,7 @@
 package com.example.codedoctors
 
+import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.ContentValues.TAG
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +10,7 @@ import android.view.View
 import android.widget.CheckBox
 import android.widget.Toast
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.codedoctors.databinding.ActivityMain2Binding
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.firestore
@@ -55,6 +58,7 @@ class MainActivity2 : AppCompatActivity(), View.OnClickListener {
                 )
     }
 
+    @SuppressLint("SuspiciousIndentation")
     private fun saveSynptoms (name_symptoms: String, pain_fell: List<String>) {
         val database = Firebase.firestore
 
@@ -68,9 +72,15 @@ class MainActivity2 : AppCompatActivity(), View.OnClickListener {
             database.collection("symptoms").add(symptoms).addOnSuccessListener { documentReference ->
                 Log.d(TAG,"Documentsnapshot add with ID: ${documentReference.id}")
                 Toast.makeText(this, "Dados Salvos com Sucesso", Toast.LENGTH_SHORT).show()
+                finish()
 
-                val navController = findNavController(R.id.AcitivityMains2_FramLayout)
-                navController.navigate(R.id.list_of_Symptoms)
+//                val navController = findNavController(R.id.AcitivityMains2_FramLayout)
+//                navController.navigate(R.id.list_of_Symptoms)
+
+//                val navController = Activity().findNavController(R.id.AcitivityMains2_FramLayout)
+//
+//                    navController.navigate(R.id.action_secondFragment_to_mainActivity2)
+
 
             }
                 .addOnFailureListener {e:Throwable? ->

@@ -1,6 +1,7 @@
 package com.example.codedoctors
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -67,10 +68,8 @@ class MedicinesRegisterActivity : AppCompatActivity(), View.OnClickListener {
             database.collection("medicines").add(medicine).addOnSuccessListener { documentReference ->
                 Log.d(TAG,"DocumentSnapshot added with ID: ${documentReference.id}")
                 Toast.makeText(this,"Dados Salvos com Sucesso", Toast.LENGTH_SHORT).show()
+                finish()
 
-
-                 val navController = findNavController(R.id.medicinesRegister_FrameLayout)
-                navController.navigate(R.id.first_fragment)
 
             }
                 .addOnFailureListener { e:Throwable? ->
