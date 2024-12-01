@@ -31,5 +31,5 @@ Banco de Dados: Firebase
 
 
 Vinicius Lima
-E-mail: vnlima9l@exemplo.com
+E-mail: vnlima9@gmail.com
 LinkedIn: www.linkedin.com/in/vinicius-lima-9a041b139
