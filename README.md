@@ -12,11 +12,12 @@ Relato de dores
 3. Prontuário Médico
 Consulta de todos os registros através de integração com um banco de dados.
 Permite a visualização consolidada das informações cadastradas para criação de prontuários médicos.
+
 🚀 Como Executar o Projeto
 Certifique-se de ter o Android Studio instalado em sua máquina.
 Clone este repositório em sua máquina:
 
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/ViniciusLima93/App_Medicine.git
 
 Abra o projeto no Android Studio.
 Selecione a API 35 como emulador sugerido.
