@@ -98,8 +98,9 @@ class MainActivity2 : AppCompatActivity(), View.OnClickListener {
     override  fun onClick(view: View?) {
         if (view != null ) {
             if (view.id == R.id.back_To_ListSymptoms) {
-                val navController = findNavController(R.id.AcitivityMains2_FramLayout)
-                navController.navigate(R.id.list_of_Symptoms)
+//                val navController = findNavController(R.id.AcitivityMains2_FramLayout)
+//                navController.navigate(R.id.list_of_Symptoms)
+                finish()
             }
 
             if (view.id == R.id.button_SaveSymptoms) {

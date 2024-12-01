@@ -25,6 +25,16 @@
         android:theme="@style/Theme.CodeDoctors"
         tools:targetApi="31">
         <activity
+            android:name=".AuthAndLogin"
+            android:exported="false"
+            android:label="@string/title_activity_auth_and_login"
+            android:theme="@style/Theme.CodeDoctors" />
+        <activity
+            android:name=".AuthandLogin"
+            android:exported="false"
+            android:label="@string/title_activity_authand_login"
+            android:theme="@style/Theme.CodeDoctors" />
+        <activity
             android:name=".MedicinesRegisterActivity"
             android:exported="false" />
         <activity

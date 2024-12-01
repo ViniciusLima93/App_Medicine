@@ -15,7 +15,6 @@
         />
 
 
-
     <TextView
         android:id="@+id/medicine_ViewFromFirebase"
         android:layout_width="match_parent"

@@ -43,6 +43,8 @@ class MainActivity : AppCompatActivity() {
             .addToBackStack(null)
             .commit();
 
+        AuthAndLogin()
+
         tabLayout.addOnTabSelectedListener(object: TabLayout.OnTabSelectedListener {
 
             var fragment:Fragment = FirstFragment()

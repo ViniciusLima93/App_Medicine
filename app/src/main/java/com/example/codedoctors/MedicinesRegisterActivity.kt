@@ -99,8 +99,9 @@ class MedicinesRegisterActivity : AppCompatActivity(), View.OnClickListener {
             }
 
             if(view.id == R.id.button_back_To_ListMedicines) {
-                val navController = findNavController(R.id.medicinesRegister_FrameLayout)
-                navController.navigate(R.id.first_fragment)
+//                val navController = findNavController(R.id.medicinesRegister_FrameLayout)
+//                navController.navigate(R.id.first_fragment)
+                finish()
             }
 
         }
